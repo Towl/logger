@@ -235,6 +235,7 @@ func (l *Logger) Fatalf(s string, a ...interface{}) {
 // Fatale logs Error if not nil then exit
 func (l *Logger) Fatale(e error, s string, a ...interface{}) {
 	if e != nil {
+		l.log(fmt.Sprintf("%s", e), "FATAL")
 		l.Fatalf(s, a...)
 	}
 }
