@@ -50,7 +50,7 @@ func TestLogf(t *testing.T) {
 func TestErrore(t *testing.T) {
 	l := InitTestLog()
 	e := errors.New("Fake error 1")
-	l.Warninge(e, "Test error : %s", e)
+	l.Warninge(e, "Test warning : %s", e)
 	l.Errore(e, "Test error : %s", e)
 }
 
@@ -79,9 +79,9 @@ func TestLevel(t *testing.T) {
 func TestNoError(t *testing.T) {
 	l := InitTestLog()
 	var e error
-	l.Panice(e, "Test panic : %s", e)
-	l.Errore(e, "Test error : %s", e)
-	l.Fatale(e, "Test fatal : %s", e)
+	l.Panice(e, "Test no panic : %s", e)
+	l.Errore(e, "Test no error : %s", e)
+	l.Fatale(e, "Test no fatal : %s", e)
 }
 
 func TestLogFile(t *testing.T) {
